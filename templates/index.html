@@ -1,0 +1,175 @@
+{% extends 'layout.html' %}
+<!-- Copy and paste this for each new day and update date/activities (update month)
+	<h2>00/08/20</h2>
+	<h3>Morning:</h3> 
+	<p>
+	</p>	
+	<h3>Afternoon:</h3>
+	<p>
+	</p>			
+	<h3>Evening:</h3>
+	<p>
+	</p>
+
+	For links - >  <a href="hello.html">Click Here!</a>
+-->
+{% block content %}
+<div id="Diary">
+This is the <span class="name">Diary</span> section of my web page.
+</div>
+<!-- POST Diary entries below -->
+
+<h2>07/08/20</h2>
+	<h3>Morning:</h3> 
+	<p>8:05AM Back at it. Can I look from macro for a minute to see what I'm actually doing and what the small parts are to do each of the things that need to get done? Less technical, more owner.<br>
+		Doing a check50 real quick to see what it says.<br>
+		Now I'm back in a forever loop of watching the tutorial video. I need to formulate a question to the group. Put into words what I am struggling with and someone may be able to help.<br>
+		I asked the slack group for help. Let's see what they can find. It's becoming difficult seeing what I am doing.<br>
+		9:24AM Taking a step back now and going to write out what's going on.<br>
+		So right now I have a program that accepts the input at command line of:<br>
+		./speller [dictionary] text<br>
+		this can also omit the dictionary, which will default it to "dictionaries/large"<br>
+		The only other option being "dictionaries/small", which is for debugging purposes. Faster to see what is going on. Also for checking memory leaks.<br>
+		So we have a dictionary file being "pointed to" and a text file being "pointed to". Now what do we do with those 2 texts?<br>
+		With the dictionary we LOAD it. This is our first function.<br>
+		The goal of ALL of this is to: implement the fastest spell checker you can!<br>
+		With the load function we ---<br>
+		Lost my train of thought as coffee rush had me emailing my dad... focus!<br>
+		So at the top of dictionary.c is a node struct called node. In this node is a char word and a pointer to the *next node struct.<br>
+		This is my linked list.<br>
+		Something that I was wondering is if the head of my linked list is the first node being pointed to from the hash table array defined below this?<br>
+		The other possibility is that the hash table[ith] is the head that is pointing to the next node in the linked list?<br>
+		Still havent ironed this out and maybe that's where I'm missing information that I need<br>
+		Anyway so as I mentioned then a global pointer array titled table is declared, which represents the hash table that points to the nodes.<br>
+		The array contains N node pointers. So this makes me think it's just a pointer to the linked list. Let's go with that<br>
+		They had set N to 1 as a default bucket amount, we are supposed to find an optimal value. The more buckets there are, the quicker our sort can become as we edge towards big O of 1.<br>
+		I will figure out what value N should be.<br>
+		Load, hash, check, size, unload have not been fully implemented for us. That's our job.<br>
+		I need to understand speller.c just enough to know what I am doing with the functions in dictionary.c<br>
+		I think I have enough understanding. The confusing stuff is basically calculating the time it takes to do each function so that at the end of the program it spits out how long each and all of them together took to spell check.<br>
+		The rest is going word by word and checking the text file to the dictionary file.<br>
+		They give us options for using our spell checker with preloaded texts. Seeing how the staffs implementation works. Also we can compare our spell checker with the staff's or use the preloaded keys to do a quicker check.<br>
+		-------------------<br>
+		SPECIFICATIONS:<br>
+		NO ALTERING speller.c or Makefile<br>
+		ALTER dictionary.c, but not the declarations of each function.<br>
+		May add local or global variables to dictionary.c<br>
+		May change the value of N.<br>
+		May alter dictionary.h, but not the declarations of each function.<br>
+		Check() must be case-insensitive.<br>
+		Check() should only return true if the word is actually in the dictionary.<br>
+		Spell checker may only take text, and optionally, dictionary as input.<br>
+		Spell checker must not leak memory.<br>
+		You may use hash functions from online as long as you cite the source.<br>
+
+	</p>	
+	<h3>Afternoon:</h3>
+	<p>
+	</p>			
+	<h3>Evening:</h3>
+	<p>
+	</p>
+
+<h2>06/08/20</h2>
+	<h3>Morning:</h3> 
+	<p>10:19AM I want to make a public diary version of this so people can see what I'm saying and doing if they are interested. Most of what I share is okay to be out there.<br>
+		Will think about this more when I finish this pset5. Also I will pick something I write in here and post to twitter to provide that with content.<br>
+		Getting a job in today's world is easier if people think they know more about you than they do.<br>
+
+	</p>	
+	<h3>Afternoon:</h3>
+	<p>12:35PM Haven't been updating here enough, but at the moment I have the "large" and "small" dictionaries going line by line through their files and now have to strcpy that information into a hashtable. I think that's what I have to do.<br>
+		So at the moment I am reading about malloc.. is this stalling?<br>
+		Within the program I need to allocate a node's worth of memory for each node I create.<br>
+		Just got to the part where it reminded me to check for null always after running malloc.<br>
+		Now I'm a little caught up with figuring out how to define the typedef struct node jibberish. Figuring this out.<br>
+		2:15PM I'm close to getting this load function. I have the node strcpy word and then I have it copying into table, but I need the table to point to the word and then the word to point to the first item in the index of table.<br>
+		Think I got this... Will see.
+	</p>			
+	<h3>Evening:</h3>
+	<p>7:45PM I'm still at this... feel a bit closer, but not making strides as I hoped I would by now.<br>
+		It's kicking my butt, but I got this.<br>
+
+	</p>
+
+<h2>05/08/20</h2>
+	<h3>Morning:</h3> 
+	<p>7AM Up and at em. Going to give this a crack before Yordana and Olava awake.<br>
+		11:23AM I have a few minutes to work on this. Let's see what I can do.<br>
+
+	</p>	
+	<h3>Afternoon:</h3>
+	<p>
+	</p>			
+	<h3>Evening:</h3>
+	<p>6:11PM Today is going too fast. I'm back in and getting it right now.<br>
+		Watching the video again to see if I missed something. I'm not correctly loading the dictionary in, so nothing else matters until I fix this.<br>
+		7:34PM Breakthrough! Well not really, but I can read from the dictionaries now! Using fopen()... only took a few days, anyways this is great.<br>
+		I can now store each word in a hash table. SOMEHOW.<br>
+		I'm leaving off here. Feeling good. On to fscanf next and node stuff.<br>
+	</p>
+
+<h2>04/08/20</h2>
+<h3>Morning:</h3> 
+<p>11:21AM I'm working on PSET5 for Rodrigo's coding school. I'm almost a real coder.<br>
+	I want to do a live diary entry as I go. So here it is.<br>
+	So I have a few resources to look at for hash function examples. <br>
+	I don't fully know how to do it using the methods they talk about, but I figure I have an idea how to get started. <br>
+	Basically we are creating an array of pointers that acts as the head of our hash table and there are [N] amount of these buckets.<br>
+	The hash function is what changes the string aka dictionary word from a word to a number 0 -> [N] that can be == to the index of the array of pointers.<br>
+	With this new value for the word we can point from the head of that array to a node and begin a linked list.<br>
+	The goal is to not have too many words in each "bucket" as that will slow down the hash table and bring us closer to O(n) instead of O(1). We WANT constant time.<br>
+	Let's get started and brush up on the information they provide to us, so I'm not over stepping anything that's given. <br>
+
+</p>	
+<h3>Afternoon:</h3>
+<p>12:07PM Getting a bit caught up with how much I have too do with the hash function.<br>
+	I have a feeling it's less than I think. Basically a lowercase 'a' in ascii == 01100001 and 'z' == 01111010 so this can be the buckets.<br>
+	The question becomes how to deal with the second letter, third letter and so on? But for a first version I can deal with just the first letter and my hash function wil rather simply just turn a first letter of word from char to binary.<br>
+	I'm not sure how to do this in c so I'll google it.<br>
+	Looks like I'll just be using a function to mod each place in the original integer and divide by 10 to move to the next value.<br>
+	So I got the code to work and it stores the binary in an array. I'm wondering if this will be a problem because I need to recognize this as an integer. I think.<br>
+	Either way it will work. This may just add some unnecessary for loops for checking if 1 array equals another array.<br>
+	But now that I think about it. It may make more sense to have the buckets sitting as an integer and have a way to convert word's first letter from ascii to binary to that integer. That's what the hash function will do.<br>
+	And I think I just restated something I said an hour ago, but it makes more sense in my mind now. 12:41pm.<br>
+	12:58PM Okay I have the function made that takes first letter of string and turns it into binary. "A hash function"<br>
+	1:24PM Okay I've finished this has function so that it accepts an input. I will take a break and see where I go next.<br>
+	1:42PM I'm back after some eggs and chicharron.<br>
+	I have a hash function now to place it in the load function. I'm just now realizing do I even need to do any binary conversion??<br>
+	Do I just cast it with (int)(*(word))?<br>
+	I'm watching video that helps give idea about what to do. Looks like as I'm reading through characters of dictionary I need to go one character at a time and when I get to end of word (\0) I hash that word to find it's index and then I store that word in a node at that index.<br>
+	I'm currently looking for a resource that Rodrigo shared with us that shows how to find end of word using linked list I believe? Could be wrong. Either way I need to organize useful material better to find so I'm not wasting time like this.<br>
+	I'm looking at a program labeled "getwords.c" that I believe has what I need.<br>
+	2:46PM I feel like I just did a bunch of mush copy and paste from the new stuff I just found and the old stuff I had sitting in there.<br>
+	Not feeling great about that, but feel better than where I was.<br>
+	I need to take a break : /<br>
+
+</p>			
+<h3>Evening:</h3>
+<p>7:40PM Been working on it for a few after dinner. Nothing is coming to me yet. I'll give it another crack tomorrow. Let the brain figure it out in sleep.<br>
+	
+</p>
+
+<br></br>
+</div>
+
+<hr>
+<div id="Rules">
+<p><h2>Rules</h2> 
+<ol>
+	<li>	Print upon completion of every 7 days</li>
+	<li>	Find ways to improve clarity and reduce wasteful living</li>
+	<li>	Always remember to do what helps the most people, as that will provide a proportional amount of success</li>
+</ol>
+</p>
+</div>
+<hr>
+<h2>Bottom</h2>
+<div id="Bottom">
+This is the <span class="name">Bottom</span> section of my web page.
+</div>
+
+</p>
+{% endblock %}
+
+
