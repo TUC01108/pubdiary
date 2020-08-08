@@ -19,6 +19,18 @@ This is the <span class="name">Diary</span> section of my web page.
 </div>
 <!-- POST Diary entries below -->
 
+<h2>08/08/20</h2>
+	<h3>Morning:</h3> 
+	<p>8:29AM Olava asleep on my chest. Finished the pset5 submission yesterday with a classmate's help, but it still has some bugs that I need to iron out.<br>
+		
+	</p>
+	<h3>Afternoon:</h3>
+	<p>
+	</p>			
+	<h3>Evening:</h3>
+	<p>
+	</p>
+
 <h2>07/08/20</h2>
 	<h3>Morning:</h3> 
 	<p>8:05AM Back at it. Can I look from macro for a minute to see what I'm actually doing and what the small parts are to do each of the things that need to get done? Less technical, more owner.<br>
@@ -61,7 +73,33 @@ This is the <span class="name">Diary</span> section of my web page.
 		Spell checker may only take text, and optionally, dictionary as input.<br>
 		Spell checker must not leak memory.<br>
 		You may use hash functions from online as long as you cite the source.<br>
-
+		---------<br>
+		Okay now the diary is PUBLIC! Hopefully I did this right.<br>
+		Back to the project<br>
+		So how is my hash function working right now?<br>
+		So remember we have decide that node *table[N] is the array of basically vertical structure that will have linked list nodes being pointed to one at a time. Chaining from it.<br>
+		To do this do we need to create a new pointer at each value of table[?] as we go? Does it work if we just use {table[hashed] = p1} as we have been and then mallocing a new value each time we get to a new word?<br>
+		Does this even work?<br>
+		I'm going to walk through my load function piece by piece.<br>
+		bool load(const char *dictionary) is a function that returns either true or false: if the dictionary was loaded successfully.<br>
+		It starts with one parameter which is const char *dictionary: the string of the whole dictionary file.<br>
+		Then I initialize FILE *fp: A pointer of type FILE that I will point to the data read in fopen.<br>
+		char word1[LENGTH]: is a word with a maximum length of LENGTH aka 46.<br>
+		wordCount = 0; is the count of words starting at 0.<br>
+		node *p1; is of the node struct to be used for each new word we are adding to hash table.<br>
+		*table = NULL; probably isn't necessary to put here, but making sure that the array points to NULL to start.<br>
+		Now I start with an if statement that compares the string dictionary input with either dictionaries/large or dictionaries/small. Then I check if opening either gives a non NULL value. If it does then we continue. If not then it closes fp and returns false.<br>
+		Now I start a while loop to fscanf() each word one at a time until we read EOF.<br>
+		For each word I malloc(sizeof(node)) for p1: This creates a node's worth of space in memory for p1.<br>
+		I check to make sure p1 is not NULL.<br>
+		I copy word1 into the word value in p1.<br>
+		I set the value of next in p1 to NULL<br>
+		I hash the word using the hash() function.<br>
+		If table[hashed] == NULL : this means that if the value that table[hash value of word] is NULL then.<br>
+		table[hashed] = p1; This means the table[hash value of word] points to the p1 node we created.<br>
+		wordCount++; Increase the wordCount by 1.<br>
+		free(p1); free the value at node p1 to prepare for next malloc of node.<br>
+		Check to see if wordCount has reached the large dictionary value or the small dictionary value. NEED TO FIX THIS.<br>
 	</p>	
 	<h3>Afternoon:</h3>
 	<p>
