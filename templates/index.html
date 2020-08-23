@@ -21,10 +21,35 @@ This is the <span class="name">Diary</span> section of my web page.
 <h2>23/08/20</h2>
 	<h3>Morning:</h3> 
 	<p>7:55AM Today is python day. Me becoming fully acquainted and comfortable after leaving c behind.<br>
-		
+
 	</p>	
 	<h3>Afternoon:</h3>
-	<p>
+	<p>12:20PM In now.<br>
+		Live updates coming to you.<br>
+		Will take you from where I am to the end of this pset.<br>
+		So right now I am reading the CSV file into dna.py. I am storing the fieldnames in a list variable strs.<br>
+		How do I store Alice's DNA sequence. Right now I have the column names saved in...<br>
+		and I fell off a bit with the updates but I;m back.<br>
+		So right now I am trying to figure out if I need a list of dictionaries or a dictionary of dictionaries, while trying to figure out how exactly to use either of those.<br>
+		The main thing I need to do is slow down and write out the pseudocode of what I'm trying to do to see if it even makes sense.<br>
+		I need to then attack this with the proper tools and if I don't know how to use a tool I need to google it one at a time to learn.<br>
+		Start over.<br>
+		So right now in my 'with open()' code I am storing all names of STRs that the csv provides.<br>
+		I am able to access the length of str in case I need to know that. For this it is 3.<br>
+		I create a list called names[] and a list called case_list[].<br>
+		names holds each name provided by the .CSV, but I think I can get rid of this list if I implement case_list properly.<br>
+		What I'm thinking is to create a list of dictionaries that use the name of the person as the key and the value is of each STR found in their DNA sequence.<br>
+		So for example Alice.... but then when I start to think about it I think that it might instead be better as a list of lists.<br>
+		This way the first list has the values of the names- 'Alice', 'Bob', 'Charlie' and then those lists hold the DNA sequences.<br>
+		But I'm not sure if this is possible, so I need to try.<br>
+		Okay so I have a list called names[] that stores every name provided by the CSV. I have a list called strs that stores every STR provided by CSV. And I have a list of lists named case_list that stores each DNA sequence in it.<br>
+		So I if was to get the 0 index of each of them they line up with eachother. This should give me what I need.<br>
+		The DNA sequence is stored in a string called txtfile.<br>
+		Find the longest run of consecutive repeats of the STR in the DNA sequence.<br>
+		I'm going to write a function to return the longest run of consecutive repeats for each STR one at a time and save it in a list.<br>
+		Well I finished it pretty quick from there. It is now 4:25PM.<br>
+		
+
 	</p>			
 	<h3>Evening:</h3>
 	<p>
